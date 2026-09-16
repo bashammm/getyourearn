@@ -1,0 +1,42 @@
+{
+  "name": "yabbai-treasury-dashboard",
+  "private": true,
+  "version": "15.0.0-real-revenue-tier-engine",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "dev:lan": "cross-env HOST=0.0.0.0 tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "start": "node dist/server.cjs",
+    "start:local": "cross-env HOST=127.0.0.1 NODE_ENV=production node dist/server.cjs",
+    "start:lan": "cross-env HOST=0.0.0.0 NODE_ENV=production node dist/server.cjs",
+    "health": "node scripts/health-check.mjs",
+    "test": "tsx test/run-tests.ts",
+    "lint": "tsc --noEmit",
+    "setup:live": "node scripts/setup-live.mjs",
+    "live": "node scripts/start-live.mjs"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.99.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "bs58": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^6.2.3",
+    "@sqds/multisig": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  }
+}

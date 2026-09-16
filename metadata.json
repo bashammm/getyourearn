@@ -1,0 +1,6 @@
+{
+  "name": "YABBAI",
+  "description": "Evidence-first Solana treasury dashboard with real on-chain SOL sweep controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
